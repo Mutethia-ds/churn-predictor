@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: churn-predictor
+Version: 0.1.0
+Summary: End-to-end customer churn prediction project
+Requires-Python: >=3.11
