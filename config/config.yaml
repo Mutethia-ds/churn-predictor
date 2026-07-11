@@ -1,0 +1,42 @@
+# Non-secret configuration. Secrets (passwords, keys) go in .env instead.
+
+data:
+  raw_path: "data/raw/customers.csv"
+  processed_path: "data/processed/customers_features.csv"
+  n_samples: 5000
+  target_column: "churn"
+
+database:
+  table_name: "customers"
+
+features:
+  numeric:
+    - "tenure_months"
+    - "monthly_charges"
+    - "total_charges"
+    - "support_calls"
+  categorical:
+    - "contract_type"
+    - "internet_service"
+    - "payment_method"
+
+model:
+  sklearn:
+    name: "gradient_boosting"
+    n_estimators: 200
+    max_depth: 3
+    learning_rate: 0.05
+    test_size: 0.2
+  torch:
+    name: "churn_mlp"
+    hidden_size: 32
+    epochs: 30
+    learning_rate: 0.001
+    batch_size: 64
+    test_size: 0.2
+
+mlflow:
+  experiment_name: "customer_churn"
+
+api:
+  model_stage: "sklearn"   # "sklearn" or "torch"

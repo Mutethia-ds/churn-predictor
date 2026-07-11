@@ -1,0 +1,33 @@
+name: churn-predictor
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - scikit-learn
+  - matplotlib
+  - plotly
+  - pytorch
+  - cpuonly
+  - psycopg2
+  - sqlalchemy
+  - pyyaml
+  - python-dotenv
+  - pytest
+  - pytest-cov
+  - ruff
+  - black
+  - pip
+  - pip:
+      - streamlit
+      - fastapi
+      - uvicorn[standard]
+      - mlflow
+      - great_expectations
+      - apache-airflow==2.9.3
+      - mkdocs
+      - mkdocs-material
+      - httpx
+      - pydantic-settings
